@@ -192,11 +192,11 @@ public class MainActivity extends Activity {
     	    {
     	 		String strHtml = MainActivity.this.Load(file);
     	 		if(strHtml == null)
-    	 			strHtml = "<html><head><title>Error</title></head><body>Load page failed! Check your Network and SDCard.</body></html>";
+    	 			strHtml = "<html><head><title>Error</title></head><body>Load page failed(" + String.valueOf(statusCode) + ")! Check your Network and SDCard.</body></html>";
    	 			MainActivity.this.setTitle(strKey);
     	 		MainActivity.this.LoadHtml(strUrl, strHtml);
 
-    	    	if(statusCode != 304){
+    	    	if(statusCode > 0 && statusCode != 304){
     	    		file.delete();
     	    	}
   	        }
