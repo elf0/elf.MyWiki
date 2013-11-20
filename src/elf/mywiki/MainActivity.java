@@ -196,9 +196,9 @@ public class MainActivity extends Activity {
    	 			MainActivity.this.setTitle(strKey);
     	 		MainActivity.this.LoadHtml(strUrl, strHtml);
 
-//    	    	if(statusCode == 404){
+    	    	if(statusCode != 304){
     	    		file.delete();
-//    	    	}
+    	    	}
   	        }
     	    
     	    @Override
